@@ -1,0 +1,39 @@
+<!--pages/news/news.wxml-->
+<loading hidden="{{loadinghiden}}">
+  香港记者...
+</loading>
+<view>
+  <swiper indicator-dots='true' autoplay='true' interval='5000' circular='true' catchtap='OnSwiperTap'>
+    <block wx:for="{{swipers}}" wx:for-item="item" wx:for-index="idx" wx:key="index">
+      <swiper-item>
+        <navigator url="item/item?_id={{item.newsid}}" open-type="navigate">
+          <image src='{{item.imgpath}}' data-post-id='{{item._id}}'></image>
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+  <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
+    <block wx:for="{{news}}" wx:for-item="item" wx:for-index="idx" wx:key="index">
+      <navigator url="item/item?_id={{item._id}}" open-type="navigate">
+        <view class='post-container'>
+          <view class='post-author-date'>
+            <image src='{{item.avatar_img}}'></image>
+            <view>
+            <text class='post-author'>{{item.avatar}}</text>
+            <text class='post-date'>{{item.parsstime}}</text>
+            </view>
+          </view>
+          <text class='post-title'>{{item.title}}</text>
+          <image mode='aspectFill' class='post-image' src='{{item.des_img}}'></image>
+          <text class='post-content'>{{item.description}}</text>
+          <view class='post-like'>
+          <image src='/images/ico/view.png'></image>
+            <text>{{item.view}}</text>
+            <image src='/images/ico/medal{{item.ismedal?"_":""}}.png'></image>
+            <text>{{item.medal}}</text>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </scroll-view>
+</view>

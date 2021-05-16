@@ -1,0 +1,21 @@
+<!--pages/servicer/servicer.wxml-->
+<loading hidden="{{loadinghiden}}">
+  正在面试...
+</loading>
+
+<block wx:for="{{list}}" wx:key="index">
+<view class="view_tupian_wenzi">
+  <navigator class="navigator" url="item/item?_id={{item._id}}" open-type="navigate">
+    <image mode="widthFix" class="headimg" src="{{item.headimg}}" />
+    <!-- 包裹两行文字 -->
+    <view class="view_wenzi2">
+      <text>{{item.name}}</text>
+      <text class="text_small">{{item.motto}}</text>
+    </view>
+  </navigator>
+  <view class="medal">
+    <image bindtap="click" data-_id="{{item._id}}" data-index="{{index}}" mode="widthFix" class="medalimg" src="/images/ico/medal{{item.ismedal?'_':''}}.png"/>
+    <text>{{item.medal}}</text>
+  </view>
+</view>
+</block>

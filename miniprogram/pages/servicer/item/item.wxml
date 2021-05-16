@@ -1,0 +1,31 @@
+<!--pages/servicer/item/item.wxml-->
+<loading hidden="{{loadinghiden}}">
+  梳妆打扮中...
+</loading>
+
+<view class="view_contain">
+  <!-- 第一部分 -->
+  <view class="view_1">
+    <view class="view_image_text">
+      <image class="image_radius" src="{{item.headimg}}" />
+      <text>{{item.name}}</text>
+      <text>{{item.phone}}</text>
+    </view>
+  </view>
+  <!-- 第二部分 -->
+  <view class="view_2">
+    <text class="text_saoyisao">{{item.motto}}</text>
+  </view>
+
+  <!-- 第三部分 -->
+  <view class="view_3">
+    <view class="list-item" bindtap="calling">
+      <image class="item-image" src="/images/ico/call.png"></image>
+      <text class="item-text">一键拨号</text>
+    </view>
+    <view class="list-item" bindtap="click" data-_id="{{item._id}}">
+      <image class="item-image" src="/images/ico/medal{{item.ismedal?'_':''}}.png"></image>
+      <text class="item-text">{{item.medal}}</text>
+    </view>
+  </view>
+</view>

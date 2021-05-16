@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/servicer/servicer",
+    "pages/servicer/item/item",
+    "pages/news/news",
+    "pages/news/item/item",
+    "pages/my/my",
+    "pages/my/booking/booking",
+    "pages/my/suggestion/suggestion",
+    "pages/my/about/about"
+  ],
+
+  "tabBar": {
+    "color": "#cdcdcd",
+    "selectedColor": "#000000",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/ico/home_.png",
+        "iconPath": "images/ico/home.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/ico/service_.png",
+        "iconPath": "images/ico/service.png",
+        "pagePath": "pages/servicer/servicer",
+        "text": "置业顾问"
+      },
+      {
+        "selectedIconPath": "images/ico/news_.png",
+        "iconPath": "images/ico/news.png",
+        "pagePath": "pages/news/news",
+        "text": "最新咨询"
+      },
+      {
+        "selectedIconPath": "images/ico/my_.png",
+        "iconPath": "images/ico/my.png",
+        "pagePath": "pages/my/my",
+        "text": "我的信息"
+      }
+    ]
+  },
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "GreySun_Info",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

@@ -1,0 +1,63 @@
+/* pages/servicer/servicer.wxss */
+
+/* 包裹图片和两行文字 */
+.view_tupian_wenzi {
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  /* 圆角 */
+  border-radius: 20rpx;
+  /* 边 */
+  border: 3rpx solid #E0E3DA;
+  box-shadow:5rpx 5rpx 5rpx 5rpx #E0E3DA;
+  background-color: #ffffff;
+  margin: 15rpx;
+  /* padding使得文字和图片不至于贴着边框 */
+  padding: 30rpx;
+}
+
+.view_tupian_wenzi  .navigator{
+  height: 120rpx;
+  position: absolute;
+  left: 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 76%;
+}
+
+/* 图片 */
+.headimg {
+  width: 200rpx;
+}
+
+.view_tupian_wenzi  .medal{
+  position: absolute;
+  right: 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 20%;
+}
+
+.medalimg {
+  width: 50rpx;
+}
+
+/* 包裹两行文字 */
+.view_wenzi2 {
+  width: 100%;
+  margin-left: 25rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 小字 */
+.text_small {
+  font-size: 30rpx;
+  word-break: break-all;
+  color: #7a7878;
+  margin-top: 10rpx
+}

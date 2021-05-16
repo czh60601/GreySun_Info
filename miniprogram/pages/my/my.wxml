@@ -1,0 +1,62 @@
+<!--pages/my/my.wxml-->
+<view wx:if="{{!userdata.hasUserInfo}}">
+  <view wx:if="{{canIUse}}">
+    <view class='header'>
+      <image src='/images/ico/wx.png'></image>
+    </view>
+
+    <view class='content'>
+      <view>申请获取以下权限</view>
+      <text>获得你的公开信息(昵称，头像等)</text>
+    </view>
+
+    <button class='bottom' type='primary' bindtap="getUserProfile" style="position: relative; left: -2rpx; top: -3rpx">登录授权</button>
+  </view>
+  <view wx:else>请升级微信版本</view>
+</view>
+
+<view wx:else>
+  <view class="userinfo">
+      <image class="userinfo-avatar" src="{{userdata.userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userdata.userInfo.nickName}}</text>
+  </view>
+  
+  <view class="hr"></view>
+  <view class="item">
+    <view class="title">
+      手机绑定
+      <text wx:if="{{userdata.phonenumber}}" class="phonenumber">{{userdata.phonenumber}}</text>
+    </view>
+    <button wx:if="{{!userdata.phonenumber}}" class="getPhoneNumber" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">点击绑定手机号</button>
+    <view class="detail2">
+      <text>></text>
+    </view>
+  </view>
+  <view class="line"></view>
+
+  <navigator class="item" url="booking/booking" open-type="navigate">
+    <view class="title">预约看房</view>
+    <view class="detail2">
+      <text> ></text>
+    </view>
+  </navigator>
+  <view class="line"></view>
+
+  <navigator class="item" url="suggestion/suggestion" open-type="navigate">
+    <view class="title">意见反馈</view>
+    <view class="detail2">
+      <text> ></text>
+    </view>
+  </navigator>
+  <view class="line"></view>
+
+  <navigator class="item" url="about/about" open-type="navigate">
+    <view class="title">关于我们</view>
+    <view class="detail2">
+      <text> ></text>
+    </view>
+  </navigator>
+  <view class="line"></view>
+
+  <view class="hr"></view>
+</view>

@@ -1,0 +1,26 @@
+<!--pages/news/item/item.wxml-->
+<loading hidden="{{loadinghiden}}">
+  奋笔疾书中...
+</loading>
+<view class="container">
+  <image class='head-image' src='{{item.des_img}}'></image>
+  <text class='title'>{{item.title}}</text>
+    <view class='author-date'>
+      <view class='author-box'>
+        <image class='avatar' src='{{item.avatar_img}}'></image>
+        <text class='author'>{{item.avatar}}</text>
+      </view>
+      <text class='date'>{{item.parsstime}}</text>
+    </view>
+    <text class='detail'>{{item.content}}</text>
+</view>
+<view class='tool'>
+ <view class='tool-item' data-post-id="{{item._id}}">
+       <image src='/images/ico/view.png'></image>
+       <text>{{item.view}}</text>
+    </view>
+    <view class='tool-item' catchtap='click' data-_id="{{item._id}}">
+       <image src='/images/ico/medal{{item.ismedal?"_":""}}.png' animation="{{animationUp}}"></image>
+       <text>{{item.medal}}</text>
+    </view>
+</view>
