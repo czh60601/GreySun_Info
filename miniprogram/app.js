@@ -20,6 +20,44 @@ Date.prototype.Format = function (fmt) { //author: meizz
 }
 
 App({
+  globalData : {
+    userdata: {
+      _openid: null,
+      hasUserInfo: false,
+      cdate:null,
+      phonenumber:null,
+      userInfo: {
+        avatarUrl:'/images/ico/user-unlogin.png',
+        city: '',
+        country: '',
+        gender: 0,
+        language: '',
+        nickName: '',
+        province: ''
+      }
+    },
+    servicerMedal:{},
+    newsMedal:{},
+    CDBName : {
+      UserData : 'userdata',
+      Servicer : 'servicer',
+      News : 'news',
+      UserMedal: 'usermedal',
+      Swipers: 'swipers',
+      Booking: 'booking'
+    },
+    cloudFun:{
+      login:'login',
+      getServerDate:'getServerDate',
+      updateMedal:'updatemedal'
+    },
+    CloudFilePath : {
+      cloudPath : 'cloud://cloud1-9gei6h8g8d110481.636c-cloud1-9gei6h8g8d110481-1305691241/',
+      servicerPath : 'servicer/',
+      newsPath : 'news/'
+    }
+  },
+  
   onLaunch: function () {
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
@@ -33,43 +71,6 @@ App({
         env: 'cloud1-9gei6h8g8d110481',
         traceUser: true,
       })
-    }
-
-    this.globalData = {
-      userdata: {
-        _openid: null,
-        hasUserInfo: false,
-        cdate:null,
-        phonenumber:null,
-        userInfo: {
-          avatarUrl:'/images/ico/user-unlogin.png',
-          city: '',
-          country: '',
-          gender: 0,
-          language: '',
-          nickName: '',
-          province: ''
-        }
-      },
-      servicerMedal:{},
-      newsMedal:{},
-      CDBName : {
-        UserData : 'userdata',
-        Servicer : 'servicer',
-        News : 'news',
-        UserMedal: 'usermedal',
-        Swipers: 'swipers'
-      },
-      cloudFun:{
-        login:'login',
-        getServerDate:'getServerDate',
-        updateMedal:'updatemedal'
-      },
-      CloudFilePath : {
-        cloudPath : 'cloud://cloud1-9gei6h8g8d110481.636c-cloud1-9gei6h8g8d110481-1305691241/',
-        servicerPath : 'servicer/',
-        newsPath : 'news/'
-      }
     }
   },
 

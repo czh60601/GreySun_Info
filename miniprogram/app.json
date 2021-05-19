@@ -1,19 +1,24 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/booking/booking",
     "pages/servicer/servicer",
     "pages/servicer/item/item",
     "pages/news/news",
     "pages/news/item/item",
     "pages/my/my",
-    "pages/my/booking/booking",
-    "pages/my/suggestion/suggestion",
     "pages/my/about/about"
   ],
 
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+
   "tabBar": {
     "color": "#cdcdcd",
-    "selectedColor": "#000000",
+    "selectedColor": "#2c2c2c",
     "borderStyle": "white",
     "list": [
       {
@@ -29,10 +34,16 @@
         "text": "置业顾问"
       },
       {
+        "selectedIconPath": "images/ico/add_.png",
+        "iconPath": "images/ico/add.png",
+        "pagePath": "pages/booking/booking",
+        "text": "预约看房"
+      },
+      {
         "selectedIconPath": "images/ico/news_.png",
         "iconPath": "images/ico/news.png",
         "pagePath": "pages/news/news",
-        "text": "最新咨询"
+        "text": "最新资讯"
       },
       {
         "selectedIconPath": "images/ico/my_.png",

@@ -1,0 +1,9 @@
+/* pages/my/booking/booking.wxss */
+
+
+.image_radius{
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}

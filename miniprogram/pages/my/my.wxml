@@ -8,9 +8,9 @@
     <view class='content'>
       <view>申请获取以下权限</view>
       <text>获得你的公开信息(昵称，头像等)</text>
-    </view>
+    </view> 
 
-    <button class='bottom' type='primary' bindtap="getUserProfile" style="position: relative; left: -2rpx; top: -3rpx">登录授权</button>
+    <button class='bottom' type='primary' bindtap="getUserProfile">登录授权</button>
   </view>
   <view wx:else>请升级微信版本</view>
 </view>
@@ -22,32 +22,40 @@
   </view>
   
   <view class="hr"></view>
-  <view class="item">
+  <view wx:if="{{userdata.phonenumber}}" class="item">
     <view class="title">
       手机绑定
-      <text wx:if="{{userdata.phonenumber}}" class="phonenumber">{{userdata.phonenumber}}</text>
+      <text class="phonenumber">{{userdata.phonenumber}}</text>
     </view>
-    <button wx:if="{{!userdata.phonenumber}}" class="getPhoneNumber" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">点击绑定手机号</button>
     <view class="detail2">
       <text>></text>
     </view>
   </view>
+  <button wx:else class="button_full" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+    <view class="title">
+      手机绑定
+      <text class="phonenumber">点击绑定手机号</text>
+    </view>
+    <view class="detail2">
+      <text>></text>
+    </view>
+  </button>
   <view class="line"></view>
 
-  <navigator class="item" url="booking/booking" open-type="navigate">
-    <view class="title">预约看房</view>
+  <button open-type="contact" class="button_full" bindcontact="handleContact">
+    <view class="title">在线客服</view>
     <view class="detail2">
       <text> ></text>
     </view>
-  </navigator>
+  </button>
   <view class="line"></view>
 
-  <navigator class="item" url="suggestion/suggestion" open-type="navigate">
+  <button open-type="feedback" class="button_full">
     <view class="title">意见反馈</view>
     <view class="detail2">
       <text> ></text>
     </view>
-  </navigator>
+  </button>
   <view class="line"></view>
 
   <navigator class="item" url="about/about" open-type="navigate">

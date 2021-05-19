@@ -1,2 +1,58 @@
 <!--pages/my/about/about.wxml-->
-<text>pages/my/about/about.wxml</text>
+<view class="page-phone">
+    <view class="header">
+      <view class="wx-title">GreySun_Info</view>
+      <view class="wx-desc">这是一条小尾巴！</view>
+      <image src="/images/logo.jpg" class="logoimg"></image>
+    </view>
+
+    <view class="content">
+
+      <view class="wx-cell">
+         <view class="icon">
+            <image src="/images/ico/address.png" class="icon-postion"></image>
+         </view>
+         <view class="cell-bd" bindtap="getLocation">北京市东城区景山前街4号(故宫博物院)</view>
+         <view class="cell-fd">
+            <image src="/images/ico/jtright.png" class="icon-postion"></image>
+         </view>
+      </view>
+
+      <view class="wx-cell">
+         <view class="icon">
+            <image src="/images/ico/clock.png" class="icon-postion"></image>
+         </view>
+         <view class="cell-bd">9：00 - 18：00</view>
+      </view>
+
+      <view class="wx-cell" bindtap="calling">
+         <view class="icon">
+            <image src="{{phoneimg}}" class="icon-postion"></image>
+         </view>
+         <view class="cell-bd">400-001-0010</view>
+         <view class="cell-fd">
+           <image src="/images/ico/jtright.png" class="icon-postion"></image>
+         </view>
+      </view>
+
+    </view>
+
+    <view class="content">
+      <view class="wx-cell">
+        <view class="icon">
+          <image src="/images/ico/fire.png" class="icon-postion"></image>
+        </view>
+        <view class="cell-bd">热点事件</view>
+      </view>
+       
+      <swiper indicator-dots='true' autoplay='true' interval='5000' circular='true' catchtap='OnSwiperTap'>
+        <block wx:for="{{swipers}}" wx:for-item="item" wx:for-index="idx" wx:key="index">
+          <swiper-item>
+            <navigator url="item/item?_id={{item.newsid}}" open-type="navigate">
+            <image src='{{item.imgpath}}' data-post-id='{{item._id}}' class="slide-image"  width="355" height="150"/>
+            </navigator>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+</view>

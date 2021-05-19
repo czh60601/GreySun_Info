@@ -126,5 +126,18 @@ Page({
         }
       });
     }
+  },
+
+  handleContact (e) {
+    console.log(e.detail)
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.setData({
+      userdata: app.globalData.userdata,
+    });
   }
 })

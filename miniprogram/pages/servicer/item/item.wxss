@@ -48,21 +48,6 @@ page {
   background: white;
 }
 
-.view_tupianwenzi {
-  display: flex;
-  flex-direction: column;
-  width: 120rpx;
-  align-items: center;
-  margin-left: 25rpx;
-  margin-right: 25rpx;
-}
-
-.image_tupian {
-  display: flex;
-  width: 100rpx;
-  height: 100rpx;
-}
-
 /* 第三部分 */
 
 .view_3 {

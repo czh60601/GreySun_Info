@@ -1,0 +1,61 @@
+<!--pages/my/booking/booking.wxml-->
+<view class="page">
+<view class="weui-form">
+<view>
+    <image class="image_radius" mode="widthFix" src="/images/ico/wellcome.png" />
+</view>
+<form  bindsubmit="submit">
+<view class="weui-form__opr-area">
+  <view class="weui-cells__group weui-cells__group_form">
+    <view class="weui-cells weui-cells_form">
+      <view class="weui-cell weui-cell_active">
+        <view class="weui-cell__hd">
+          <label class="weui-label">姓名</label>
+        </view>
+        <view class="weui-cell__bd">
+          <input bindblur="nameChange" class="weui-input {{errn?'weui-cell_warn':''}}" name="nmae" placeholder="请输出预约人姓名" placeholder-class="weui-input__placeholder" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_active">
+        <view class="weui-cell__hd">							
+          <label class="weui-label">联系电话</label>
+        </view>
+        <view class="weui-cell__bd">
+          <input bindblur="pnoChange"  class="weui-input {{errp?'weui-cell_warn':''}}" name="phonenumber" placeholder="请填写电话号码" type="number" placeholder-class="weui-input__placeholder" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_active">
+        <view class="weui-cell__hd">
+          <label class="weui-label">专车接送</label>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-cells weui-cells_radio">
+            <radio-group name="goType" bindchange="goTypeChange">
+              <radio value="0" checked>专车接送</radio>
+              <radio value="1">自行前往</radio>
+            </radio-group>
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_active">
+        <view class="weui-cell__hd">							
+          <label class="weui-label">接送地址</label>
+        </view>
+        <view class="weui-cell__bd">
+          <view class="weui-cell__bd" bindtap="getLocation">
+            <input disabled="disabled" name="address_name" class="weui-input" type="number" placeholder-class="weui-input__placeholder" value="{{bookingData.address_name}}" />
+            <input disabled="disabled" name="address_info" class="weui-input"  type="number" placeholder-class="weui-input__placeholder" value="{{bookingData.address_info}}" />
+          </view>
+        </view>
+        
+      </view>
+    </view><!-- form end -->
+  </view>
+</view>
+<view class="weui-form__opr-area">
+  <button form-type="submit" class="weui-btn weui-btn_primary">确定</button>
+</view>
+</form>
+</view>
+</view>
