@@ -1,2 +1,96 @@
 <!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<image id="imgbg" mode="widthFix" style="opacity:{{imgbgOpacity}}" class="background" src="/images/index-background.jpg" />
+<view class="page">
+  <view class="box">
+    <view>
+      <map id="mapIndex" setting="{{setting}}" ></map>
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex">
+        <view class="padding-xs">
+          <view class="cu-tag bg-green">森绿</view>
+        </view>
+        <view class="padding-xs">
+          <view class="cu-tag bg-green">森绿</view>
+        </view>
+        <view class="padding-xs">
+          <view class="cu-tag bg-green">森绿</view>
+        </view>
+        <view class="padding-xs">
+          <view class="cu-tag bg-green">森绿</view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="solid-bottom text-xl padding">
+          <text class="text-black text-bold">高层:</text>
+          <text class="text-price text-red">4700/平米</text>
+        </view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="solid-bottom text-xl padding">
+          <text class="text-black text-bold">洋房:</text>
+          <text class="text-price text-red">6000/平米</text>
+        </view>
+      </view>
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="solid-bottom text-xl padding">
+          <text class="text-black text-bold">商铺:</text>
+          <text class="text-price text-red">18000/平米</text>
+        </view>
+      </view>
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="placeholder">
+          <view bindtap="getLocation">路径导航</view>
+        </view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">
+          <navigator url="/pages/booking/booking" open-type="switchTab">预约看房</navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="box">
+    <view class="wx-cell">
+      <view class="icon">
+        <image src="/images/ico/SMART_HOUSE.png" class="icon-postion"></image>
+      </view>
+      <view class="cell-bd">户型一览</view>
+    </view>
+    <swiper indicator-dots='true' autoplay='true' interval='5000' circular='true' catchtap='OnSwiperTap'>
+      <block wx:for="{{swipers}}" wx:for-item="item" wx:for-index="idx" wx:key="index">
+        <swiper-item wx:if="{{item.type=='house'}}">
+          <navigator url="/pages/news/item/item?_id={{item.newsid}}" open-type="navigate">
+          <image src='{{item.imgpath}}' data-post-id='{{item._id}}'/>
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="box">
+      <view class="wx-cell">
+        <view class="icon">
+          <image src="/images/ico/fire.png" class="icon-postion"></image>
+        </view>
+        <view class="cell-bd">热点事件</view>
+      </view>
+       
+      <swiper indicator-dots='true' autoplay='true' interval='5000' circular='true' catchtap='OnSwiperTap'>
+        <block wx:for="{{swipers}}" wx:for-item="item" wx:for-index="idx" wx:key="index">
+          <swiper-item  wx:if="{{item.type=='news'}}">
+            <navigator url="/pages/news/item/item?_id={{item.newsid}}" open-type="navigate">
+            <image src='{{item.imgpath}}' data-post-id='{{item._id}}'/>
+            </navigator>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+</view>

@@ -39,7 +39,19 @@ Page({
     //获取单个记录
     db.collection(app.globalData.CDBName.News).doc(this.data.item._id).get({
       success: res => {
-        res.data.view;
+        let content = app.towxml(res.data.content,'markdown',{
+          // theme:'dark',
+          events:{
+            tap:e => {
+              console.log('tap',e);
+            },
+            change:e => {
+              console.log('todo',e);
+            }
+          }
+        });
+
+        res.data.content = content;
         this.setData({
           item: res.data,
           'item.parsstime': app.getDiffTime(res.data.cdate,true),

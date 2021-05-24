@@ -31,18 +31,6 @@ Page({
   },
 
   getLocation: function (){
-    //wx.getLocation({
-    //  type: 'gcj02', //返回可以用于wx.openLocation的经纬度
-    //  success (res) {
-    //    const latitude = res.latitude
-    //    const longitude = res.longitude
-    //    console.log(res)
-    //  },
-    //  fail: err =>{
-    //    console.error(err)
-    //  }
-    //})
-
     //latitude: 29.863968961781023,
     //longitude: 107.7634180966034,
     wx.openLocation({
@@ -63,7 +51,7 @@ Page({
   onLoad: function (options) {
     const db = wx.cloud.database();
     //获取轮播
-    db.collection(app.globalData.CDBName.Swipers).where({}).get({
+    db.collection(app.globalData.CDBName.Swipers).where({type:'news'}).get({
       success: res => {
         this.setData({
             swipers:res.data

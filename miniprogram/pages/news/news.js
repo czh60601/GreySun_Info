@@ -17,12 +17,13 @@ Page({
     const db = wx.cloud.database();
 
     //获取轮播
-    db.collection(app.globalData.CDBName.Swipers).where({}).get({
+    db.collection(app.globalData.CDBName.Swipers).where({type:'news'}).get({
       success: res => {
         this.setData({
             swipers:res.data
           }
         )
+        console.log(res.data)
       },fail: res=> {
         console.error('[数据库] [查找记录] 失败：', err);
       }

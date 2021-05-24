@@ -7,7 +7,67 @@ Page({
    * 页面的初始数据
    */
   data: {
+    content2:{},
+    scrollTop: 0,
+    imgbgOpacity: 1,
+    swipers: [],
+    setting: {
+      latitude: "39.916527",//中心纬度
+      longitude: "116.397128",//中心经度
+      scale:"13", //缩放级别，取值范围为3-20
+      markers:[{
+        id: 1,
+        latitude: "39.916527",//中心纬度
+        longitude: "116.397128",//中心经度
+        iconPath: '/images/ico/location.png',
+        width: 40,//标注图标宽度
+        height: 40,//标注图标高度
+        anchor: {x: 0.5,y: 1}, //经纬度在标注图标的锚点，默认底边中点{x: .5, y: 1}
+        callout: {
+          content: '故宫博物院',
+          color: '#ff0000',
+          fontSize: 12,
+          borderWidth: 1,
+          borderRadius: 5,
+          borderColor: '#000000',
+          bgColor: '#fff',
+          padding: 2,
+          display: 'ALWAYS',
+          textAlign: 'center',
+          anchorY:20  
+        }
+      }], //标记点
+    }
+  },
 
+  getLocation: function (){
+    //wx.getLocation({
+    //  type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+    //  success (res) {
+    //    const latitude = res.latitude
+    //    const longitude = res.longitude
+    //    console.log(res)
+    //  },
+    //  fail: err =>{
+    //    console.error(err)
+    //  }
+    //})
+
+    //latitude: 29.863968961781023,
+    //longitude: 107.7634180966034,
+    wx.openLocation({
+      latitude: 39.916527,
+      longitude: 116.397128,
+      name:"故宫博物院",
+      address:"北京市东城区景山前街4号",
+      scale: 0,
+      success: res =>{
+        console.log("[wx] [openLocation] success",res)
+      },
+      fail: err =>{
+        console.error("[wx] [openLocation] error",err)
+      }
+    })
   },
 
   /**
@@ -18,78 +78,41 @@ Page({
       app.login();
     }
 
-    //测试数据添加
-    console.error('TODO：', '测试数据添加');
-    var addData = false;
-    if(addData){
-      const db = wx.cloud.database();
-      for(var i=0;i<1;i++){
-        db.collection(app.globalData.CDBName._).add({
-          data: {
-            newsid: '79550af26090b57313ce864126759596',
-            imgpath: 'cloud://cloud1-9gei6h8g8d110481.636c-cloud1-9gei6h8g8d110481-1305691241/servicer/R81fbe1bf3d7bd1d0c7354ed9124209e3.jpg',
-
-            //"avatar": "鲁迅"+i,
-            //"avatar_img": "/images/code-cloud-callback-config.png",
-            //"cdate": db.serverDate(),
-            //"content": "我的心分外地寂寞。 然而我的心很平安；没有爱憎，没有哀乐，也没有颜色和声音。 我大概老了。我的头发已经苍白，不是很明白的事么？我的手颤抖着，不是很明白的事么？那么我的灵魂的手一定也颤抖着，头发也一定苍白了。 然而这是许多年前的事了。 这以前，我的心也曾充满过血腥的歌声：血和铁，火焰和毒，恢复和报仇。而忽然这些都空虚了，但有时故意地填以没奈何的自欺的希望。希望，希望，用这希望的盾，抗拒那空虚中的暗夜的袭来，虽然盾后面也依然是空虚中的暗夜。然而就是如此，陆续地耗尽了我的青春。 我早先岂不知我的青春已经逝去？但以为身外的青春固在：星，月光，僵坠的蝴蝶，暗中的花，猫头鹰的不祥之言，杜鹃的啼血，笑的渺茫，爱的翔舞。……虽然是悲凉漂渺的青春罢，然而究竟是青春。 然而现在何以如此寂寞？难道连身外的青春也都逝去，世上的青年也多衰老了么？ 我只得由我来肉薄这空虚中的暗夜了。我放下了希望之盾，我听到Petofi Sandor (1823-49)的“希望”之歌： 希望是什么？是娼妓： 她对谁都蛊惑，将一切都献给； 待你牺牲了极多的宝贝—— 你的青春——她就抛弃你。 这伟大的抒情诗人，匈牙利的爱国者，为了祖国而死在可萨克兵的矛尖上，已经七十五年了。悲哉死也，然而更可悲的是他的诗至今没有死。 但是，可惨的人生！桀骜英勇如Petofi，也终于对了暗夜止步，回顾茫茫的东方了。他说： 绝望之为虚妄，正与希望相同。 倘使我还得偷生在不明不暗的这“虚妄”中，我就还要寻求那逝去的悲凉漂渺的青春，但不妨在我的身外。因为身外的青春倘一消灭，我身中的迟暮也即凋零了。 然而现在没有星和月光，没有僵坠的蝴蝶以至笑的渺茫，爱的翔舞。然而青年们很平安。 我只得由我来肉薄这空虚中的暗夜了，纵使寻不到身外的青春，也总得自己来一掷我身中的迟暮。但暗夜又在那里呢？现在没有星，没有月光以至没有笑的渺茫和爱的翔舞；青年们很平安，而我的面前又竟至于并且没有真的暗夜。 绝望之为虚妄，正与希望相同！",
-            //"des_img": "/images/code-func-sum.png",
-            //"description": "我大概老了。我的头发已经苍白，不是很明白的事么？我的手颤抖着，不是很明白的事么？那么我的灵魂//的手一定也颤抖着，头发也一定苍白了。",
-            //"medal": "112",
-            //"title": "希望"+i,
-            //"view": "100"
+    const db = wx.cloud.database();
+    //获取轮播
+    db.collection(app.globalData.CDBName.Swipers).where({}).get({
+      success: res => {
+        this.setData({
+            swipers:res.data
           }
-        })
+        )
+        console.log(res.data)
+      },fail: res=> {
+        console.error('[数据库] [查找记录] 失败：', err);
       }
-  }
-  },
+    });
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+    //测试数据添加
+    console.error('TODO：', '快速测试代码片段');
 
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
+  //监听屏幕滚动 判断上下滚动  
+  onPageScroll: function (ev) {
+    let imgbgOpacity = this.data.imgbgOpacity;
 
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    if(ev.scrollTop > 0){
+      if(ev.scrollTop>this.data.scrollTop){
+        imgbgOpacity = imgbgOpacity - 0.1<0?0:imgbgOpacity - 0.1;
+      }else{
+        imgbgOpacity = imgbgOpacity + 0.1;
+      }
+    }else{
+      imgbgOpacity = 1
+    }
+    this.data.scrollTop = ev.scrollTop
+    this.setData({
+      imgbgOpacity:imgbgOpacity
+    })
   }
 })

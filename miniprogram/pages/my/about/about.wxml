@@ -48,8 +48,8 @@
       <swiper indicator-dots='true' autoplay='true' interval='5000' circular='true' catchtap='OnSwiperTap'>
         <block wx:for="{{swipers}}" wx:for-item="item" wx:for-index="idx" wx:key="index">
           <swiper-item>
-            <navigator url="item/item?_id={{item.newsid}}" open-type="navigate">
-            <image src='{{item.imgpath}}' data-post-id='{{item._id}}' class="slide-image"  width="355" height="150"/>
+            <navigator url="/pages/news/item/item?_id={{item.newsid}}" open-type="navigate">
+            <image src='{{item.imgpath}}' data-post-id='{{item._id}}' class="slide-image"/>
             </navigator>
           </swiper-item>
         </block>

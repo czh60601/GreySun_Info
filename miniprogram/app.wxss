@@ -2,6 +2,10 @@
 
 @import "style/weui.wxss";
 
+@import "style/colorui/main.wxss";
+@import "style/colorui/animation.wxss";
+@import "style/colorui/icon.wxss";
+
 
 .container {
   display: flex;

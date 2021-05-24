@@ -12,7 +12,7 @@
       </view>
       <text class='date'>{{item.parsstime}}</text>
     </view>
-    <text class='detail'>{{item.content}}</text>
+    <towxml nodes="{{item.content}}"/>
 </view>
 <view class='tool'>
  <view class='tool-item' data-post-id="{{item._id}}">

@@ -1,12 +1,13 @@
 <!--pages/my/booking/booking.wxml-->
 <view class="page">
-<view class="weui-form">
 <view>
-    <image class="image_radius" mode="widthFix" src="/images/ico/wellcome.png" />
+    <image class="image_radius" mode="widthFix" src="/images/wellcome.png" />
 </view>
+<view class="weui-form" style="padding-top:3%">
 <form  bindsubmit="submit">
 <view class="weui-form__opr-area">
   <view class="weui-cells__group weui-cells__group_form">
+    <view class="weui-cells__title">客服会的第一时间联系您已确认来访时间，请保持电话畅通！</view>
     <view class="weui-cells weui-cells_form">
       <view class="weui-cell weui-cell_active">
         <view class="weui-cell__hd">

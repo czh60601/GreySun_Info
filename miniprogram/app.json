@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/booking/booking",
     "pages/servicer/servicer",
+    "pages/booking/booking",
     "pages/servicer/item/item",
     "pages/news/news",
     "pages/news/item/item",
@@ -60,6 +60,9 @@
     "navigationBarTitleText": "GreySun_Info",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
+  },
+  "usingComponents": {
+    "towxml":"/towxml/towxml"
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
