@@ -24,7 +24,7 @@ Page({
         const db = wx.cloud.database();
         db.collection(app.globalData.CDBName.UserData).add({
           data: {
-            cdate:db.serverDate(),
+            _createTime:db.serverDate(),
             userInfo: app.globalData.userdata.userInfo
           },
           success: res => {

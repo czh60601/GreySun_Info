@@ -1,0 +1,370 @@
+[{
+    "fields": [{
+        "dateFormatType": "date",
+        "description": "系统字段，请勿随意修改",
+        "displayName": "创建时间",
+        "id": "_createTime",
+        "isSystem": true,
+        "name": "_createTime",
+        "type": "DateTime"
+    },
+    {
+        "dateFormatType": "date",
+        "description": "系统字段，请勿随意修改",
+        "displayName": "修改时间",
+        "id": "_updateTime",
+        "isSystem": true,
+        "name": "_updateTime",
+        "type": "DateTime"
+    },
+    {
+        "description": "系统字段，请勿随意修改",
+        "displayName": "创建用户ID",
+        "id": "_openid",
+        "isSystem": true,
+        "name": "_openid",
+        "order": 2,
+        "type": "String"
+    },
+    {
+        "copyable": true,
+        "description": "系统字段，请勿随意修改",
+        "displayName": "文档 ID",
+        "id": "_id",
+        "isHidden": true,
+        "isSystem": true,
+        "name": "_id",
+        "type": "String"
+    },
+    {
+        "displayName": "详细地址",
+        "id": "address_info",
+        "name": "address_info",
+        "order": 4,
+        "type": "String"
+    },
+    {
+        "displayName": "地名",
+        "id": "address_name",
+        "name": "address_name",
+        "order": 5,
+        "type": "String"
+    },
+    {
+        "displayName": "来访方式",
+        "id": "goType",
+        "name": "goType",
+        "order": 6,
+        "type": "String"
+    },
+    {
+        "displayName": "姓名",
+        "id": "nmae",
+        "name": "name",
+        "order": 7,
+        "type": "String"
+    },
+    {
+        "displayName": "联系方式",
+        "id": "phonenumber",
+        "name": "phonenumber",
+        "order": 8,
+        "type": "String"
+    },
+    {
+        "displayName": "回访记录",
+        "id": "calldesc",
+        "name": "calldesc",
+        "order": 9,
+        "type": "String"
+    }],
+    "collectionName": "booking",
+    "displayName": "预约",
+    "_id": "booking"
+},
+{
+    "fields": [{
+        "dateFormatType": "date",
+        "description": "系统字段，请勿随意修改",
+        "displayName": "创建时间",
+        "id": "_createTime",
+        "isSystem": true,
+        "name": "_createTime",
+        "type": "DateTime"
+    },
+    {
+        "dateFormatType": "date",
+        "description": "系统字段，请勿随意修改",
+        "displayName": "修改时间",
+        "id": "_updateTime",
+        "isSystem": true,
+        "name": "_updateTime",
+        "type": "DateTime"
+    },
+    {
+        "description": "系统字段，请勿随意修改",
+        "displayName": "创建用户ID",
+        "id": "_openid",
+        "isSystem": true,
+        "name": "_openid",
+        "type": "String"
+    },
+    {
+        "copyable": true,
+        "description": "系统字段，请勿随意修改",
+        "displayName": "文档 ID",
+        "id": "_id",
+        "isHidden": true,
+        "isSystem": true,
+        "name": "_id",
+        "type": "String"
+    },
+    {
+        "displayName": "作者",
+        "id": "avatar",
+        "name": "avatar",
+        "order": "0",
+        "type": "String"
+    },
+    {
+        "displayName": "作者头像",
+        "id": "avatar_img",
+        "name": "avatar_img",
+        "order": "1",
+        "resourceLinkType": "https",
+        "type": "Image"
+    },
+    {
+        "displayName": "简述",
+        "id": "description",
+        "name": "description",
+        "order": "4",
+        "type": "String"
+    },
+    {
+        "displayName": "点赞数",
+        "id": "medal",
+        "name": "medal",
+        "order": "5",
+        "type": "String"
+    },
+    {
+        "displayName": "标题",
+        "id": "title",
+        "name": "title",
+        "order": "6",
+        "type": "String"
+    },
+    {
+        "displayName": "阅读数",
+        "id": "view",
+        "name": "view",
+        "order": "7",
+        "type": "String"
+    },
+    {
+        "displayName": "正文",
+        "id": "content",
+        "name": "content",
+        "order": 11,
+        "type": "Markdown"
+    },
+    {
+        "displayName": "描述图片",
+        "id": "des_img",
+        "name": "des_img",
+        "order": 11,
+        "resourceLinkType": "fileId",
+        "type": "Image"
+    }],
+    "collectionName": "news",
+    "displayName": "最新资讯",
+    "_id": "news"
+},
+{
+    "fields": [{
+        "dateFormatType": "date",
+        "description": "系统字段，请勿随意修改",
+        "displayName": "创建时间",
+        "id": "_createTime",
+        "isSystem": true,
+        "name": "_createTime",
+        "type": "DateTime"
+    },
+    {
+        "dateFormatType": "date",
+        "description": "系统字段，请勿随意修改",
+        "displayName": "修改时间",
+        "id": "_updateTime",
+        "isSystem": true,
+        "name": "_updateTime",
+        "type": "DateTime"
+    },
+    {
+        "copyable": true,
+        "description": "系统字段，请勿随意修改",
+        "displayName": "文档 ID",
+        "id": "_id",
+        "isHidden": true,
+        "isSystem": true,
+        "name": "_id",
+        "type": "String"
+    },
+    {
+        "displayName": "姓名",
+        "id": "name",
+        "name": "name",
+        "order": "0",
+        "type": "String"
+    },
+    {
+        "displayName": "一句话",
+        "id": "motto",
+        "name": "motto",
+        "order": "2",
+        "type": "String"
+    },
+    {
+        "displayName": "点赞数",
+        "id": "medal",
+        "name": "medal",
+        "order": "3",
+        "type": "String"
+    },
+    {
+        "displayName": "联系方式",
+        "id": "phone",
+        "name": "phone",
+        "order": "4",
+        "type": "String"
+    },
+    {
+        "displayName": "照片",
+        "id": "headimg",
+        "name": "headimg",
+        "order": 8,
+        "resourceLinkType": "fileId",
+        "type": "Image"
+    }],
+    "collectionName": "servicer",
+    "displayName": "置业顾问",
+    "_id": "servicer"
+},
+{
+    "fields": [{
+        "dateFormatType": "date",
+        "description": "系统字段，请勿随意修改",
+        "displayName": "创建时间",
+        "id": "_createTime",
+        "isSystem": true,
+        "name": "_createTime",
+        "type": "DateTime"
+    },
+    {
+        "dateFormatType": "date",
+        "description": "系统字段，请勿随意修改",
+        "displayName": "修改时间",
+        "id": "_updateTime",
+        "isSystem": true,
+        "name": "_updateTime",
+        "type": "DateTime"
+    },
+    {
+        "displayName": "用户ID",
+        "id": "_openid",
+        "isSystem": true,
+        "name": "_openid",
+        "order": 2,
+        "type": "String"
+    },
+    {
+        "copyable": true,
+        "description": "系统字段，请勿随意修改",
+        "displayName": "文档 ID",
+        "id": "_id",
+        "isHidden": true,
+        "isSystem": true,
+        "name": "_id",
+        "type": "String"
+    },
+    {
+        "displayName": "微信信息",
+        "id": "userInfo",
+        "name": "userInfo",
+        "order": 4,
+        "type": "Object"
+    },
+    {
+        "displayName": "联系方式",
+        "id": "phonenumber",
+        "name": "phonenumber",
+        "order": 5,
+        "type": "String"
+    }],
+    "collectionName": "userdata",
+    "displayName": "用户",
+    "_id": "userdata"
+},
+{
+    "fields": [{
+        "dateFormatType": "date",
+        "description": "系统字段，请勿随意修改",
+        "displayName": "创建时间",
+        "id": "_createTime",
+        "isSystem": true,
+        "name": "_createTime",
+        "type": "DateTime"
+    },
+    {
+        "dateFormatType": "date",
+        "description": "系统字段，请勿随意修改",
+        "displayName": "修改时间",
+        "id": "_updateTime",
+        "isSystem": true,
+        "name": "_updateTime",
+        "type": "DateTime"
+    },
+    {
+        "description": "系统字段，请勿随意修改",
+        "displayName": "创建用户ID",
+        "id": "_openid",
+        "isSystem": true,
+        "name": "_openid",
+        "type": "String"
+    },
+    {
+        "copyable": true,
+        "description": "系统字段，请勿随意修改",
+        "displayName": "文档 ID",
+        "id": "_id",
+        "isHidden": true,
+        "isSystem": true,
+        "name": "_id",
+        "type": "String"
+    },
+    {
+        "displayName": "类型",
+        "id": "type",
+        "name": "type",
+        "order": "1",
+        "type": "String"
+    },
+    {
+        "displayName": "文章ID",
+        "id": "newsid",
+        "name": "newsid",
+        "order": "2",
+        "type": "String"
+    },
+    {
+        "displayName": "图片",
+        "id": "imgpath",
+        "name": "imgpath",
+        "order": 7,
+        "resourceLinkType": "filedid",
+        "type": "Image"
+    }],
+    "collectionName": "swipers",
+    "displayName": "轮播图片",
+    "_id": "swipers"
+}]

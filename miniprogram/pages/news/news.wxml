@@ -20,7 +20,7 @@
     </block>
   </swiper>
 
-  <scroll-view scroll-y="true" bindscrolltolower="searchScrollLower">
+  <view scroll-y="true" bindscrolltolower="searchScrollLower">
     <block wx:for="{{news}}" wx:for-item="item" wx:for-index="idx" wx:key="index">
       <navigator url="item/item?_id={{item._id}}" open-type="navigate">
         <view class='post-container'>
@@ -43,5 +43,5 @@
         </view>
       </navigator>
     </block>
-  </scroll-view>
+  </view>
 </view>

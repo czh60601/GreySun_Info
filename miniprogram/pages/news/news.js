@@ -51,7 +51,7 @@ Page({
         //获取文章列表
         db.collection(app.globalData.CDBName.News)
         .where({}).field({content:false})
-        .orderBy("cdate","desc")
+        .orderBy("_createTime","desc")
         .skip(this.data.skip).limit(20)
         .get({
           success: res => {
@@ -66,7 +66,7 @@ Page({
               return;
             }
             res.data.forEach(function(item){
-              item.parsstime = app.getDiffTime(item.cdate,true);
+              item.parsstime = app.getDiffTime(item._createTime,true);
               item.ismedal = app.globalData.newsMedal[item._id] != null;
             });
             if(this.data.skip!=0){

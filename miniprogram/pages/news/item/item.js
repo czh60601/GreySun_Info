@@ -10,7 +10,7 @@ Page({
     item:{
       avatar: null,
       avatar_img: null,
-      cdate: null,
+      _createTime: null,
       content: null,
       des_img: null,
       description: null,
@@ -19,7 +19,6 @@ Page({
       title: null,
       view: null,
       _id: null,
-      content: null,
       parsstime:null
     },
     loadinghiden:false
@@ -54,7 +53,7 @@ Page({
         res.data.content = content;
         this.setData({
           item: res.data,
-          'item.parsstime': app.getDiffTime(res.data.cdate,true),
+          'item.parsstime': app.getDiffTime(res.data._createTime,true),
           'item.ismedal': app.globalData.newsMedal[res.data._id] != null,
           loadinghiden: true
         });
