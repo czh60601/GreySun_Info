@@ -56,7 +56,7 @@ Page({
     }
 
     const db = wx.cloud.database();
-    update.cdate = db.serverDate();
+    update._createTime = db.serverDate();
     db.collection(app.globalData.CDBName.Booking).add({
       data: update,
       success: res => {

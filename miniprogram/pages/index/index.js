@@ -7,7 +7,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    content2:{},
     scrollTop: 0,
     imgbgOpacity: 1,
     swipers: [],
@@ -34,25 +33,13 @@ Page({
           padding: 2,
           display: 'ALWAYS',
           textAlign: 'center',
-          anchorY:20  
+          anchorY:20
         }
       }], //标记点
     }
   },
 
   getLocation: function (){
-    //wx.getLocation({
-    //  type: 'gcj02', //返回可以用于wx.openLocation的经纬度
-    //  success (res) {
-    //    const latitude = res.latitude
-    //    const longitude = res.longitude
-    //    console.log(res)
-    //  },
-    //  fail: err =>{
-    //    console.error(err)
-    //  }
-    //})
-
     //latitude: 29.863968961781023,
     //longitude: 107.7634180966034,
     wx.openLocation({
@@ -114,5 +101,19 @@ Page({
     this.setData({
       imgbgOpacity:imgbgOpacity
     })
+  },
+  onShareAppMessage() {
+    const promise = new Promise(resolve => {
+      setTimeout(() => {
+        resolve({
+          title: '自定义转发标题'
+        })
+      }, 2000)
+    })
+    return {
+      title: '自定义转发标题',
+      path: '/page/user?share=123',
+      promise 
+    }
   }
 })

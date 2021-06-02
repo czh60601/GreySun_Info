@@ -27,7 +27,7 @@ App({
     userdata: {
       _openid: null,
       hasUserInfo: false,
-      cdate:null,
+      _createTime:null,
       phonenumber:null,
       userInfo: {
         avatarUrl:'/images/ico/user-unlogin.png',
@@ -73,7 +73,7 @@ App({
         // env: 'my-env-id',
         env: 'cloud1-9gei6h8g8d110481',
         traceUser: true,
-      })
+      });
     }
   },
 
